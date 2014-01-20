@@ -23,6 +23,8 @@ NeoBundle 'vim-scripts/newspaper.vim'
 NeoBundle 'Townk/vim-autoclose'
 
 NeoBundle 'fuenor/JpFormat.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-rails'
 
 filetype plugin on
 filetype indent on
@@ -179,3 +181,7 @@ set directory=~/.vim/tmp
 
 " jpformat
 let JpCountDeleteReg = '\[.\{-}\]\|<.\{-}>\|《.\{-}》\|［.\{-}］\|｜'
+
+" nerdtree settings
+map <C-e> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
