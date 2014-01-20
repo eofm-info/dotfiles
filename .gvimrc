@@ -16,7 +16,7 @@ endif
 if has('gui_macvim')
     set imdisable
     " 11iMBAしか持ってない。買い足したら個別設定にする。
-    winpos 51 22
-    set lines=48
-    set columns=183
+    winpos 850 22
+    set lines=55
+    set columns=71
 endif
