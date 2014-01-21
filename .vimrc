@@ -11,7 +11,6 @@ call neobundle#rc(expand('~/.vim/bundle'))
 
 "NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'altercation/vim-colors-solarized'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
@@ -19,12 +18,17 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'vim-scripts/newspaper.vim'
 NeoBundle 'Townk/vim-autoclose'
 
 NeoBundle 'fuenor/JpFormat.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-rails'
+
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/newspaper.vim'
+NeoBundle 'junegunn/seoul256.vim'
+
+NeoBundle 'itchyny/lightline.vim'
 
 filetype plugin on
 filetype indent on
@@ -185,3 +189,14 @@ let JpCountDeleteReg = '\[.\{-}\]\|<.\{-}>\|《.\{-}》\|［.\{-}］\|｜'
 " nerdtree settings
 map <C-e> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
+" CS初期設定。gvimは.gvimrcで個別にやって。
+set background=dark
+colorscheme seoul256
+set laststatus=2
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
