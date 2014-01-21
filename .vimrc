@@ -190,13 +190,16 @@ let JpCountDeleteReg = '\[.\{-}\]\|<.\{-}>\|《.\{-}》\|［.\{-}］\|｜'
 map <C-e> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-
-" CS初期設定。gvimは.gvimrcで個別にやって。
+" 見ばえ設定。gvimは.gvimrcで個別にやって。
 set background=dark
 colorscheme seoul256
 set laststatus=2
+set hlsearch " 検索時ハイライト設定
 
+" lightlinek設定
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
+" 自動的にquickfix-windowを開く
+autocmd QuickFixCmdPost *grep* cwindow
