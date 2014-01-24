@@ -9,7 +9,6 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundle'))
 
-"NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete.vim'
 
 NeoBundle 'Shougo/unite.vim'
@@ -30,6 +29,7 @@ NeoBundle 'junegunn/seoul256.vim'
 
 NeoBundle 'itchyny/lightline.vim'
 
+filetype on
 filetype plugin on
 filetype indent on
 
@@ -164,6 +164,8 @@ function! s:unite_my_settings()"{{{
   inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 endfunction"}}}
 
+" はにゃーん。https://twitter.com/yoneapp/status/383233456496340992
+let g:neocomplete#force_overwrite_completefunc=1
 
 "tab
 set tabstop=4
