@@ -20,7 +20,7 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'Townk/vim-autoclose'
 
 NeoBundle 'fuenor/JpFormat.vim'
-NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'tpope/vim-rails'
 
 NeoBundle 'altercation/vim-colors-solarized'
@@ -167,6 +167,75 @@ endfunction"}}}
 " はにゃーん。https://twitter.com/yoneapp/status/383233456496340992
 let g:neocomplete#force_overwrite_completefunc=1
 
+" lightline設定(とりあえずコピペ)
+let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'MyModified',
+        \   'readonly': 'MyReadonly',
+        \   'fugitive': 'MyFugitive',
+        \   'filename': 'MyFilename',
+        \   'fileformat': 'MyFileformat',
+        \   'filetype': 'MyFiletype',
+        \   'fileencoding': 'MyFileencoding',
+        \   'mode': 'MyMode'
+        \ }
+        \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+      return fugitive#head()
+    endif
+  catch
+  endtry
+  return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+" lightline設定ここまで
+
+" jpformat
+let JpCountDeleteReg = '\[.\{-}\]\|<.\{-}>\|《.\{-}》\|［.\{-}］\|｜'
+
+" Vimfiler Settings
+map <C-e> :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
+
 "tab
 set tabstop=4
 set softtabstop=4
@@ -185,23 +254,11 @@ syntax enable
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
 
-" jpformat
-let JpCountDeleteReg = '\[.\{-}\]\|<.\{-}>\|《.\{-}》\|［.\{-}］\|｜'
-
-" nerdtree settings
-map <C-e> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " 見ばえ設定。gvimは.gvimrcで個別にやって。
 set background=dark
 colorscheme seoul256
 set laststatus=2
 set hlsearch " 検索時ハイライト設定
-
-" lightlinek設定
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
 
 " 自動的にquickfix-windowを開く
 autocmd QuickFixCmdPost *grep* cwindow
