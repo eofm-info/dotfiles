@@ -267,3 +267,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 set list
 set listchars=tab:>\ ,trail:~
 
+
+" ローカル設定。最後に実行すること。
+if filereadable(expand('~/.vimrc.local'))
+    source ~/.vimrc.local
+endif
