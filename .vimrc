@@ -264,5 +264,6 @@ set hlsearch " 検索時ハイライト設定
 autocmd QuickFixCmdPost *grep* cwindow
 
 " tab を表示。>(space)
-set listchars=tab:>\ 
+set list
+set listchars=tab:>\ ,trail:~
 
