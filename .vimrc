@@ -262,3 +262,7 @@ set hlsearch " 検索時ハイライト設定
 
 " 自動的にquickfix-windowを開く
 autocmd QuickFixCmdPost *grep* cwindow
+
+" tab を表示。>(space)
+:set listchars=tab:>\ 
+
