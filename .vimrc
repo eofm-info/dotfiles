@@ -28,6 +28,7 @@ NeoBundle 'vim-scripts/newspaper.vim'
 NeoBundle 'junegunn/seoul256.vim'
 
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tpope/vim-surround'
 
 filetype on
 filetype plugin on
