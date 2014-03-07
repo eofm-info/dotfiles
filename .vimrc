@@ -268,6 +268,9 @@ autocmd QuickFixCmdPost *grep* cwindow
 set list
 set listchars=tab:>\ ,trail:~
 
+" 記号がずれるよ！  
+set ambiwidth=double
+
 
 " ローカル設定。最後に実行すること。
 if filereadable(expand('~/.vimrc.local'))
