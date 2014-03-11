@@ -13,18 +13,20 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'fuenor/JpFormat.vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'vim-scripts/newspaper.vim'
 NeoBundle 'yuratomo/w3m.vim'
+
+" colorscheme
+NeoBundle 'vim-scripts/newspaper.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'junegunn/seoul256.vim'
 
 filetype on
 filetype plugin on
@@ -264,7 +266,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 set list
 set listchars=tab:>\ ,trail:~
 
-" 記号がずれるよ！  
+" 記号がずれるよ！
 set ambiwidth=double
 
 
