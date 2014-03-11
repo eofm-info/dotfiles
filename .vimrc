@@ -10,25 +10,21 @@ endif
 call neobundle#rc(expand('~/.vim/bundle'))
 
 NeoBundle 'Shougo/neocomplete.vim'
-
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'thinca/vim-quickrun'
-
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Townk/vim-autoclose'
-
-NeoBundle 'fuenor/JpFormat.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'tpope/vim-rails'
-
+NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/newspaper.vim'
-NeoBundle 'junegunn/seoul256.vim'
-
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'fuenor/JpFormat.vim'
+NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'junegunn/seoul256.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'vim-scripts/newspaper.vim'
+NeoBundle 'yuratomo/w3m.vim'
 
 filetype on
 filetype plugin on
