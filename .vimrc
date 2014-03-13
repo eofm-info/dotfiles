@@ -21,12 +21,16 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'yuratomo/w3m.vim'
 
 " colorscheme
 NeoBundle 'vim-scripts/newspaper.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'junegunn/seoul256.vim'
+
+" コマンドいる系
+if executable('w3m')
+    NeoBundle 'yuratomo/w3m.vim'
+endif
 
 filetype on
 filetype plugin on
