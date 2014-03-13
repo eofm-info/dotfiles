@@ -9,6 +9,7 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundle'))
 
+NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
@@ -121,6 +122,9 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+" はにゃーん。https://twitter.com/yoneapp/status/383233456496340992
+let g:neocomplete#force_overwrite_completefunc=1
+
 "unite prefix key.
 nnoremap [unite] <Nop>
 nmap <Space>f [unite]
@@ -147,6 +151,8 @@ nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 "ブックマークに追加
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+"yankround履歴表示
+nnoremap <silent> [unite]p :<C-u>Unite yankround<CR>
 "uniteを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
@@ -166,9 +172,6 @@ function! s:unite_my_settings()"{{{
   nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
   inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 endfunction"}}}
-
-" はにゃーん。https://twitter.com/yoneapp/status/383233456496340992
-let g:neocomplete#force_overwrite_completefunc=1
 
 " lightline設定(とりあえずコピペ)
 let g:lightline = {
@@ -238,6 +241,14 @@ let JpCountDeleteReg = '\[.\{-}\]\|<.\{-}>\|《.\{-}》\|［.\{-}］\|｜'
 
 " Vimfiler Settings
 map <C-e> :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
+
+" yankround settings
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
 
 "tab
 set tabstop=4
