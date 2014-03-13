@@ -269,6 +269,9 @@ set listchars=tab:>\ ,trail:~
 " 記号がずれるよ！
 set ambiwidth=double
 
+" backspace
+set backspace=indent,eol,start
+
 
 " ローカル設定。最後に実行すること。
 if filereadable(expand('~/.vimrc.local'))
