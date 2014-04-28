@@ -267,6 +267,7 @@ syntax enable
 " backup, swap
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
+set undodir=~/.vim/tmp
 
 " 見ばえ設定。gvimは.gvimrcで個別にやって。
 set background=dark
