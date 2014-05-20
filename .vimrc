@@ -22,6 +22,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'mattn/emmet-vim'
 
 " colorscheme
 NeoBundle 'vim-scripts/newspaper.vim'
