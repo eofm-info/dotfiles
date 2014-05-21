@@ -23,6 +23,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'tpope/vim-fugitive'
 
 " colorscheme
 NeoBundle 'vim-scripts/newspaper.vim'
