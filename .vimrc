@@ -24,6 +24,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'osyo-manga/vim-anzu'
 
 " colorscheme
 NeoBundle 'vim-scripts/newspaper.vim'
@@ -251,6 +252,12 @@ nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+
+" anzu Settings
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
 
 "tab
 set tabstop=4
