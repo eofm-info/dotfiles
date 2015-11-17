@@ -1,13 +1,15 @@
 set encoding=utf-8
 
 " NeoBundle
-set nocompatible
-filetype off
-
 if has('vim_starting')
+  if &compatible
+      set nocompatible
+  endif
   set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'Shougo/neocomplete.vim'
@@ -36,7 +38,8 @@ if executable('w3m')
     NeoBundle 'yuratomo/w3m.vim'
 endif
 
-filetype on
+call neobundle#end()
+
 filetype plugin on
 filetype indent on
 
