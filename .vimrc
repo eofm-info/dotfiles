@@ -1,45 +1,41 @@
 set encoding=utf-8
 
-" NeoBundle settings
-" ------------------
-if has('vim_starting')
-  if &compatible
-      set nocompatible
-  endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim
+if &compatible
+    set nocompatible
 endif
-call neobundle#begin(expand('~/.vim/bundle'))
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(expand('~/.vim/dein'))
 
-NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'fuenor/JpFormat.vim'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'osyo-manga/vim-anzu'
+call dein#add('Shougo/dein.vim')
+call dein#add('LeafCage/yankround.vim')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimfiler.vim')
+call dein#add('Townk/vim-autoclose')
+call dein#add('derekwyatt/vim-scala')
+call dein#add('fuenor/JpFormat.vim')
+call dein#add('h1mesuke/unite-outline')
+call dein#add('itchyny/lightline.vim')
+call dein#add('thinca/vim-quickrun')
+call dein#add('tpope/vim-rails')
+call dein#add('tpope/vim-surround')
+call dein#add('ujihisa/unite-colorscheme')
+call dein#add('mattn/emmet-vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('osyo-manga/vim-anzu')
 
 " colorscheme
-NeoBundle 'vim-scripts/newspaper.vim'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'junegunn/seoul256.vim'
+call dein#add('vim-scripts/newspaper.vim')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('junegunn/seoul256.vim')
 
 " コマンドいる系
 if executable('w3m')
-    NeoBundle 'yuratomo/w3m.vim'
+    call dein#add('yuratomo/w3m.vim')
 endif
 
-call neobundle#end()
+call dein#end()
 
 filetype plugin on
 filetype indent on
