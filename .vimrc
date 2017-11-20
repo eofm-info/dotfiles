@@ -23,6 +23,7 @@ call dein#add('ujihisa/unite-colorscheme')
 call dein#add('mattn/emmet-vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('osyo-manga/vim-anzu')
+call dein#add('fatih/vim-go')
 
 " colorscheme
 call dein#add('vim-scripts/newspaper.vim')
